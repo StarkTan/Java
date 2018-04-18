@@ -11,6 +11,7 @@
     <modules>
         <module>JDBC</module>
         <module>Mongodb</module>
+        <module>Hibernate</module>
     </modules>
 
 
