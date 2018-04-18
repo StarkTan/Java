@@ -13,16 +13,18 @@ import java.util.Date;
  */
 public class App {
     public static void main(String[] args) {
-        Configuration configuration = new Configuration().configure();
-        SessionFactory factory =
+        final Configuration configuration = new Configuration().configure();
+        final SessionFactory factory =
                 configuration.buildSessionFactory();
-        Session session = factory.getCurrentSession();
-
-        Transaction transaction = session.beginTransaction();
-        User user = session.get(User.class,1);
+        Session session = factory.openSession();
+        User user = session.get(User.class, 1);
+        User user2 = session.get(User.class, 1);
         System.out.println(user);
-        transaction.commit();
-        session.close();
-        factory.close();
+        System.out.println(user2);
+        Session session2 = factory.openSession();
+        User user3 = session2.get(User.class, 1);
+        System.out.println(user3);
+        //session.close();
+        //factory.close();
     }
 }

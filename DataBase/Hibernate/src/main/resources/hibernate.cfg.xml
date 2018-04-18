@@ -11,14 +11,46 @@
         <!--四本一言 四大基本项： 1、驱动类名 2、指明需要连接的url 3、用户名 4、密码 Hibernate支持不同的数据库，但是每种数据库语法可能有区别，可以使用方言,注意版本 -->
         <!--数据库驱动类全称  -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <!--数据库url地址  -->
+        <!-- hibernate链接配置 无法被druid连接池识别
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8&amp;serverTimezone=UTC</property>
-        <!--用户名  -->
         <property name="hibernate.connection.username">root</property>
-        <!--密码  -->
-        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.password">root</property> -->
+        <property name="url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8&amp;serverTimezone=UTC</property>
+        <property name="username">root</property>
+        <property name="password">root</property>
         <!--方言 -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <property name="hibernate.connection.provider_class">
+            com.alibaba.druid.support.hibernate.DruidConnectionProvider
+        </property>
+
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize">1</property>
+        <property name="minIdle">1</property>
+        <property name="maxActive">2</property>
+
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait">60000</property>
+
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis">60000</property>
+
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis">300000</property>
+
+
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements">true</property>
+        <property name="maxPoolPreparedStatementPerConnectionSize">20</property>
+
+        <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+        <property name="filters">stat</property>
+
+
+
+
+
         <!--2、全局配置信息  -->
         <!--执行DDL的类别：
         create:每次都删除新建
@@ -27,10 +59,15 @@
         <!--是否显示SQL语句  -->
         <property name="hibernate.show_sql">true</property>
         <!--是否格式化SQL语句  -->
-        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
         <!-- 启用getCurrentSession，默认未启用 -->
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="packagesToScan"  >com.stark.entity</property>
+
+
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
         <!--3、加载配置文件  -->
         <!--基于xml映射文件： 映射文件加载。路径
         <mapping resource="cn/code404/domain/User.hbm.xml"></mapping>-->
