@@ -15,7 +15,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property> -->
-        <property name="url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8&amp;serverTimezone=UTC</property>
+        <property name="url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false</property>
         <property name="username">root</property>
         <property name="password">root</property>
         <!--方言 -->

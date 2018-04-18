@@ -24,7 +24,8 @@ public class App {
         Session session2 = factory.openSession();
         User user3 = session2.get(User.class, 1);
         System.out.println(user3);
-        //session.close();
-        //factory.close();
+        session.close();
+        session2.close();
+        factory.close();
     }
 }

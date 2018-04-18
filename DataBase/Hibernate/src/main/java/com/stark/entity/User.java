@@ -1,8 +1,6 @@
 package com.stark.entity;
 
 
-
-
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -19,7 +17,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE, region = "", include = "all")
 public class User implements Serializable {
 
     @Id
