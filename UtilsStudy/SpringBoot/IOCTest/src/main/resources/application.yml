@@ -1,6 +1,0 @@
-name: stark
-server:
-    port: 8081
-stark:
-    name: stark
-    age: 24
