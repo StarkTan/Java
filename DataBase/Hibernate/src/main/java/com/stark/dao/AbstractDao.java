@@ -17,7 +17,6 @@ public class AbstractDao implements Dao<Entity> {
     }
 
     public Entity save(Entity entity) {
-
         return null;
     }
 
