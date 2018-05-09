@@ -33,4 +33,9 @@ public class ArrayUtil {
         }
         return array;
     }
+
+    public static void main(String[] args) {
+        System.out.println(Float.toHexString((float) 101.23));
+        System.out.println();
+    }
 }

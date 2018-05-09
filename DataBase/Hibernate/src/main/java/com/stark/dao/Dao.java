@@ -1,7 +1,5 @@
 package com.stark.dao;
 
-import com.mysql.cj.api.Session;
-
 import java.util.List;
 
 /**
@@ -25,5 +23,4 @@ public interface Dao<Entity> {
     Entity getById(String id);
 
     List<Entity> getAll();
-    
 }

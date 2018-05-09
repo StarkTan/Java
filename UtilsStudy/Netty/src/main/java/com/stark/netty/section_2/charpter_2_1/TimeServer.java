@@ -1,13 +1,8 @@
 package com.stark.netty.section_2.charpter_2_1;
 
-import com.sun.jmx.snmp.tasks.ThreadService;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Created by Stark on 2018/1/13.

@@ -39,17 +39,12 @@
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
         <property name="minEvictableIdleTimeMillis">300000</property>
 
-
         <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
         <property name="poolPreparedStatements">true</property>
         <property name="maxPoolPreparedStatementPerConnectionSize">20</property>
 
         <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
         <property name="filters">stat</property>
-
-
-
-
 
         <!--2、全局配置信息  -->
         <!--执行DDL的类别：
@@ -63,7 +58,6 @@
         <!-- 启用getCurrentSession，默认未启用 -->
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="packagesToScan"  >com.stark.entity</property>
-
 
         <property name="hibernate.cache.use_second_level_cache">true</property>
         <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
